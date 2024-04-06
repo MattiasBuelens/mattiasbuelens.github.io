@@ -20,7 +20,7 @@
       <img
         src={avatar}
         alt={name}
-        class="mx-auto rounded-full w-36 h-36 ring-2 ring-zinc-200 dark:ring-zinc-700"
+        class="mx-auto rounded-full size-36 ring-2 ring-zinc-200 dark:ring-zinc-700"
       />
       <div class="flex gap-6">
         <SocialLinks />
@@ -36,7 +36,7 @@
         Recently Published
       </h2>
       <a href="/posts" class="flex items-center gap-1 text-sm font-medium text-teal-500"
-        >View All <ArrowRightIcon class="w-4 h-4" /></a
+        >View All <ArrowRightIcon class="size-4" /></a
       >
     </div>
     <PostsList posts={data.posts} />

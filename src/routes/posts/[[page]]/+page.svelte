@@ -31,7 +31,7 @@
   <div class="flex items-center justify-between pt-16 pb-8">
     {#if !isFirstPage}
       <a href={`/posts/${data.page - 1}`} data-sveltekit-prefetch>
-        <ArrowLeftIcon class="w-4 h-4" />
+        <ArrowLeftIcon class="size-4" />
         Previous
       </a>
     {:else}
@@ -41,7 +41,7 @@
     {#if hasNextPage}
       <a href={`/posts/${data.page + 1}`} data-sveltekit-prefetch
         >Next
-        <ArrowRightIcon class="w-4 h-4" />
+        <ArrowRightIcon class="size-4" />
       </a>
     {/if}
   </div>
