@@ -4,7 +4,7 @@ import eslintPluginSvelte from 'eslint-plugin-svelte'
 
 export default [
   js.configs.recommended,
-  ...eslintPluginSvelte.configs['flat/recommended'],
+  ...eslintPluginSvelte.configs['flat/prettier'],
   {
     languageOptions: {
       globals: {
