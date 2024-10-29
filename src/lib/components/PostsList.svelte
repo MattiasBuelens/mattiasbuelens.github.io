@@ -2,8 +2,8 @@
   import PostPreview from '$lib/components/PostPreview.svelte'
   import PostDate from '$lib/components/PostDate.svelte'
 
-  /** @type {{posts: any, children?: import('svelte').Snippet}} */
-  let { posts, children } = $props()
+  /** @type {{posts: any}} */
+  let { posts } = $props()
 </script>
 
 <div class="flex flex-col gap-16 md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
@@ -14,9 +14,7 @@
       <div class="col-span-4 md:col-span-3">
         <PostPreview {post}>
           {#snippet eyebrow()}
-            {#if children}{@render children()}{:else}
-              <PostDate class="md:hidden" {post} collapsed decorate />
-            {/if}
+            <PostDate class="md:hidden" {post} collapsed decorate />
           {/snippet}
         </PostPreview>
       </div>

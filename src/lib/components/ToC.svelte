@@ -3,8 +3,8 @@
   import { onMount } from 'svelte'
   import Card from './Card.svelte'
 
-  /** @type {{post: any, children?: import('svelte').Snippet}} */
-  let { post, children } = $props()
+  /** @type {{post: any}} */
+  let { post } = $props()
 
   let elements = []
   let headings = $state(post.headings)
@@ -51,22 +51,20 @@
 
 <Card>
   {#snippet description()}
-    {#if children}{@render children()}{:else}
-      <ul class="flex flex-col gap-2">
-        {#each headings as heading}
-          <li
-            class="pl-2 transition-colors border-teal-500 heading text-zinc-500 dark:text-zinc-600 hover:text-zinc-900 dark:hover:text-zinc-100"
-            class:active={activeHeading === heading}
-            style={`--depth: ${
-              // consider h1 and h2 at the same depth, as h1 will only be used for page title
-              Math.max(0, heading.depth - 1)
-            }`}
-          >
-            <a href={`#${heading.id}`}>{heading.value}</a>
-          </li>
-        {/each}
-      </ul>
-    {/if}
+    <ul class="flex flex-col gap-2">
+      {#each headings as heading}
+        <li
+          class="pl-2 transition-colors border-teal-500 heading text-zinc-500 dark:text-zinc-600 hover:text-zinc-900 dark:hover:text-zinc-100"
+          class:active={activeHeading === heading}
+          style={`--depth: ${
+            // consider h1 and h2 at the same depth, as h1 will only be used for page title
+            Math.max(0, heading.depth - 1)
+          }`}
+        >
+          <a href={`#${heading.id}`}>{heading.value}</a>
+        </li>
+      {/each}
+    </ul>
   {/snippet}
 </Card>
 

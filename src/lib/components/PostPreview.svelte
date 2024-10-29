@@ -2,16 +2,16 @@
   import Card from './Card.svelte'
   import ArrowRightIcon from './ArrowRightIcon.svelte'
 
-  /** @type {{post: any, eyebrow?: import('svelte').Snippet, children?: import('svelte').Snippet}} */
-  let { post, eyebrow, children } = $props()
+  /** @type {{post: any, eyebrow?: import('svelte').Snippet,}} */
+  let { post, eyebrow: _eyebrow } = $props()
 </script>
 
 <Card href={`/post/${post.slug}`} data-sveltekit-prefetch>
   {#snippet eyebrow()}
-    {@render eyebrow?.()}
+    {@render _eyebrow?.()}
   {/snippet}
   {#snippet title()}
-    {#if children}{@render children()}{:else}{post.title}{/if}
+    {post.title}
   {/snippet}
   {#snippet description()}
     <div class="prose dark:prose-invert">
