@@ -2,7 +2,7 @@ import { browser } from '$app/environment'
 import { render } from 'svelte/server'
 import { format } from 'date-fns'
 import { parse } from 'node-html-parser'
-import readingTime from 'reading-time/lib/reading-time.js'
+import readingTime from 'reading-time'
 
 // we require some server-side APIs to parse all metadata
 if (browser) {
