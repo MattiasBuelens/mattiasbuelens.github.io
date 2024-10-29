@@ -1,15 +1,8 @@
 <script>
   import { format, parseISO } from 'date-fns'
 
-
   /** @type {{decorate: any, post: any, collapsed?: boolean, class: any}} */
-  let {
-    decorate,
-    post,
-    collapsed = false,
-    class: _class
-  } = $props();
-  
+  let { decorate, post, collapsed = false, class: _class } = $props()
 </script>
 
 <div

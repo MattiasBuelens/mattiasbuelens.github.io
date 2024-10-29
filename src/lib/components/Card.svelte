@@ -1,5 +1,4 @@
 <script>
-
   /** @type {{as?: string, href?: any, class?: any, eyebrow?: import('svelte').Snippet, title?: import('svelte').Snippet, description?: import('svelte').Snippet, actions?: import('svelte').Snippet}} */
   let {
     as = 'div',
@@ -9,8 +8,7 @@
     title,
     description,
     actions
-  } = $props();
-  
+  } = $props()
 </script>
 
 <svelte:element this={as} class={['relative flex flex-col items-start group', _class].join(' ')}>
@@ -21,7 +19,7 @@
       {#if href}
         <div
           class="absolute z-0 transition scale-95 opacity-0 -inset-y-6 -inset-x-4 bg-zinc-50 group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl"
-></div>
+        ></div>
         <a {href} data-sveltekit-prefetch>
           <span class="absolute z-20 -inset-y-6 -inset-x-4 sm:-inset-x-6 sm:rounded-2xl"></span>
           <span class="relative z-10">
@@ -35,10 +33,7 @@
   {/if}
 
   {#if description}
-    <div
-      class="relative z-10 flex-1 text-sm text-zinc-600 dark:text-zinc-400"
-      class:mt-2={!!title}
-    >
+    <div class="relative z-10 flex-1 text-sm text-zinc-600 dark:text-zinc-400" class:mt-2={!!title}>
       {@render description?.()}
     </div>
   {/if}

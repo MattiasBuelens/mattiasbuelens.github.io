@@ -6,9 +6,11 @@
   import { name } from '$lib/info'
   import { page } from '$app/stores'
   /** @type {{children?: import('svelte').Snippet}} */
-  let { children } = $props();
+  let { children } = $props()
 
-  let isDarkMode = $state(browser ? Boolean(document.documentElement.classList.contains('dark')) : true)
+  let isDarkMode = $state(
+    browser ? Boolean(document.documentElement.classList.contains('dark')) : true
+  )
 
   function disableTransitionsTemporarily() {
     document.documentElement.classList.add('[&_*]:!transition-none')

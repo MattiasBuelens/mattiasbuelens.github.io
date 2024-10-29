@@ -3,7 +3,7 @@
   import ArrowRightIcon from './ArrowRightIcon.svelte'
 
   /** @type {{post: any, eyebrow?: import('svelte').Snippet, children?: import('svelte').Snippet}} */
-  let { post, eyebrow, children } = $props();
+  let { post, eyebrow, children } = $props()
 </script>
 
 <Card href={`/post/${post.slug}`} data-sveltekit-prefetch>
@@ -14,13 +14,13 @@
     {#if children}{@render children()}{:else}{post.title}{/if}
   {/snippet}
   {#snippet description()}
-    <div  class="prose dark:prose-invert">
+    <div class="prose dark:prose-invert">
       <!-- eslint-disable-next-line svelte/no-at-html-tags -->
       {@html post.preview.html}
     </div>
   {/snippet}
   {#snippet actions()}
-    <div >
+    <div>
       <div class="flex items-center text-teal-500">
         <span class="text-sm font-medium">Read</span>
         <ArrowRightIcon class="size-4 ml-1" />

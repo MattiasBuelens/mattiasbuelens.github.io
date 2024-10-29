@@ -4,7 +4,7 @@
   import Card from './Card.svelte'
 
   /** @type {{post: any, children?: import('svelte').Snippet}} */
-  let { post, children } = $props();
+  let { post, children } = $props()
 
   let elements = []
   let headings = $state(post.headings)

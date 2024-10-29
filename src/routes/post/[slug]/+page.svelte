@@ -6,9 +6,8 @@
   import { afterNavigate } from '$app/navigation'
   import PostDate from '$lib/components/PostDate.svelte'
 
-  
   /** @type {{data: import('./$types').PageData}} */
-  let { data } = $props();
+  let { data } = $props()
 
   // generated open-graph image for sharing on social media.
   // see https://og-image.vercel.app/ for more options.
