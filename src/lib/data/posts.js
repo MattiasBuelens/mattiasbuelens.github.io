@@ -1,4 +1,5 @@
 import { browser } from '$app/environment'
+import { render } from 'svelte/server'
 import { format } from 'date-fns'
 import { parse } from 'node-html-parser'
 import readingTime from 'reading-time/lib/reading-time.js'
@@ -11,8 +12,8 @@ if (browser) {
 // Get all posts and add metadata
 export const posts = Object.entries(import.meta.glob('/posts/**/*.md', { eager: true }))
   .map(([filepath, post]) => {
-    const html = parse(post.default.render().html)
-    const preview = post.metadata.preview ? parse(post.metadata.preview) : html.querySelector('p')
+    const body = parse(render(post.default).body)
+    const preview = post.metadata.preview ? parse(post.metadata.preview) : body.querySelector('p')
 
     return {
       ...post.metadata,
@@ -43,7 +44,7 @@ export const posts = Object.entries(import.meta.glob('/posts/**/*.md', { eager: 
       },
 
       // get estimated reading time for the post
-      readingTime: readingTime(html.structuredText).text
+      readingTime: readingTime(body.structuredText).text
     }
   })
   // sort by date
