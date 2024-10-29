@@ -14,8 +14,8 @@
     setActiveHeading()
   })
 
-  let activeHeading = $state(headings[0])
-  let scrollY
+  let activeHeadingIndex = $state(0)
+  let activeHeading = $derived(headings[activeHeadingIndex])
 
   function updateHeadings() {
     headings = post.headings
@@ -26,22 +26,20 @@
       })
     }
   }
-  function setActiveHeading() {
-    scrollY = window.scrollY
 
-    const visibleIndex =
+  function setActiveHeading() {
+    const scrollY = window.scrollY
+    activeHeadingIndex =
       elements.findIndex((element) => element.offsetTop + element.clientHeight > scrollY) - 1
 
-    activeHeading = headings[visibleIndex]
+    if (activeHeadingIndex < 0) {
+      const pageHeight = document.body.scrollHeight
+      const scrollProgress = (scrollY + window.innerHeight) / pageHeight
 
-    const pageHeight = document.body.scrollHeight
-    const scrollProgress = (scrollY + window.innerHeight) / pageHeight
-
-    if (!activeHeading) {
       if (scrollProgress > 0.5) {
-        activeHeading = headings[headings.length - 1]
+        activeHeadingIndex = headings.length - 1
       } else {
-        activeHeading = headings[0]
+        activeHeadingIndex = 0
       }
     }
   }
