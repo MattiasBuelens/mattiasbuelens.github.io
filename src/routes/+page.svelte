@@ -4,8 +4,9 @@
   import SocialLinks from '$lib/components/SocialLinks.svelte'
   import { avatar, bio, name } from '$lib/info.js'
 
-  /** @type {import('./$types').PageData} */
-  export let data
+  
+  /** @type {{data: import('./$types').PageData}} */
+  let { data } = $props();
 </script>
 
 <svelte:head>

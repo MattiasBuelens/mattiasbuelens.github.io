@@ -2,22 +2,31 @@
   import Card from './Card.svelte'
   import ArrowRightIcon from './ArrowRightIcon.svelte'
 
-  export let post
+  /** @type {{post: any, eyebrow?: import('svelte').Snippet, children?: import('svelte').Snippet}} */
+  let { post, eyebrow, children } = $props();
 </script>
 
 <Card href={`/post/${post.slug}`} data-sveltekit-prefetch>
-  <slot slot="eyebrow" name="eyebrow" />
-  <slot slot="title">{post.title}</slot>
-  <div slot="description" class="prose dark:prose-invert">
-    <!-- eslint-disable-next-line svelte/no-at-html-tags -->
-    {@html post.preview.html}
-  </div>
-  <div slot="actions">
-    <div class="flex items-center text-teal-500">
-      <span class="text-sm font-medium">Read</span>
-      <ArrowRightIcon class="size-4 ml-1" />
+  {#snippet eyebrow()}
+    {@render eyebrow?.()}
+  {/snippet}
+  {#snippet title()}
+    {#if children}{@render children()}{:else}{post.title}{/if}
+  {/snippet}
+  {#snippet description()}
+    <div  class="prose dark:prose-invert">
+      <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+      {@html post.preview.html}
     </div>
-  </div>
+  {/snippet}
+  {#snippet actions()}
+    <div >
+      <div class="flex items-center text-teal-500">
+        <span class="text-sm font-medium">Read</span>
+        <ArrowRightIcon class="size-4 ml-1" />
+      </div>
+    </div>
+  {/snippet}
 </Card>
 
 <style>

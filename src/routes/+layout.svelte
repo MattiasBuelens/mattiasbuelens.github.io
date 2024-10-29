@@ -5,8 +5,10 @@
   import { browser } from '$app/environment'
   import { name } from '$lib/info'
   import { page } from '$app/stores'
+  /** @type {{children?: import('svelte').Snippet}} */
+  let { children } = $props();
 
-  let isDarkMode = browser ? Boolean(document.documentElement.classList.contains('dark')) : true
+  let isDarkMode = $state(browser ? Boolean(document.documentElement.classList.contains('dark')) : true)
 
   function disableTransitionsTemporarily() {
     document.documentElement.classList.add('[&_*]:!transition-none')
@@ -32,7 +34,7 @@
         aria-label="Toggle Dark Mode"
         aria-checked={isDarkMode}
         class="size-5 sm:h-8 sm:w-8 sm:p-1"
-        on:click={() => {
+        onclick={() => {
           isDarkMode = !isDarkMode
           localStorage.setItem('isDarkMode', isDarkMode.toString())
 
@@ -53,7 +55,7 @@
       class="flex flex-col flex-grow w-full mx-auto"
       class:max-w-2xl={!$page.data.layout?.fullWidth}
     >
-      <slot />
+      {@render children?.()}
     </main>
   </div>
 </div>

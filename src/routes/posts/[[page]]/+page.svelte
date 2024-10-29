@@ -4,11 +4,12 @@
   import ArrowRightIcon from '$lib/components/ArrowRightIcon.svelte'
   import PostsList from '$lib/components/PostsList.svelte'
 
-  /** @type {import('./$types').PageData} */
-  export let data
+  
+  /** @type {{data: import('./$types').PageData}} */
+  let { data } = $props();
 
-  $: isFirstPage = data.page === 1
-  $: hasNextPage = data.posts[data.posts.length - 1]?.previous
+  let isFirstPage = $derived(data.page === 1)
+  let hasNextPage = $derived(data.posts[data.posts.length - 1]?.previous)
 </script>
 
 <svelte:head>
@@ -35,7 +36,7 @@
         Previous
       </a>
     {:else}
-      <div />
+      <div></div>
     {/if}
 
     {#if hasNextPage}
