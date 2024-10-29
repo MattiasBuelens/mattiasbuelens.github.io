@@ -1,4 +1,4 @@
 .cache
-package.json
+build
 package-lock.json
 public
