@@ -4,6 +4,7 @@ import slugPlugin from 'rehype-slug'
 import relativeImages from 'mdsvex-relative-images'
 import remarkHeadings from '@vcarl/remark-headings'
 
+/** @type {import('mdsvex').MdsvexOptions} */
 export default {
   extensions: ['.svx', '.md'],
   smartypants: {
