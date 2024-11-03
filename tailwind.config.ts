@@ -1,7 +1,11 @@
-module.exports = {
+import typography from '@tailwindcss/typography'
+import type { Config } from 'tailwindcss'
+
+export default {
+  content: ['./src/**/*.{html,js,svelte,ts}'],
   darkMode: 'class',
-  content: ['./src/**/*.{html,js,svelte,ts,md,svx}'],
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [typography],
+
   theme: {
     extend: {},
     fontSize: {
@@ -19,7 +23,7 @@ module.exports = {
       '8xl': ['6rem', { lineHeight: '1' }],
       '9xl': ['8rem', { lineHeight: '1' }]
     },
-    typography: (theme) => ({
+    typography: ({ theme }: { theme: (x: string) => string }) => ({
       invert: {
         css: {
           '--tw-prose-body': 'var(--tw-prose-invert-body)',
@@ -307,4 +311,4 @@ module.exports = {
       }
     })
   }
-}
+} satisfies Config
