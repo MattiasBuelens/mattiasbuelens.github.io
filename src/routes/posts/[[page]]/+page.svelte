@@ -47,7 +47,7 @@
   </div>
 </div>
 
-<style>
+<style lang="postcss">
   a {
     @apply flex items-center gap-2 font-medium text-zinc-700;
   }
