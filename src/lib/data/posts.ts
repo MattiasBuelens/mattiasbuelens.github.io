@@ -3,7 +3,7 @@ import { render } from 'svelte/server'
 import { format } from 'date-fns'
 import { parse } from 'node-html-parser'
 import readingTime from 'reading-time'
-import type { SvelteComponent } from 'svelte'
+import type { Component } from 'svelte'
 
 // we require some server-side APIs to parse all metadata
 if (browser) {
@@ -25,7 +25,7 @@ interface PostMetadata {
 }
 
 interface PostMarkdown {
-  default: new () => SvelteComponent
+  default: Component
   metadata: PostMetadata
 }
 
