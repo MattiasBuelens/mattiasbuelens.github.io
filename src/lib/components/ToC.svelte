@@ -52,7 +52,7 @@
     <ul class="flex flex-col gap-2">
       {#each headings as heading}
         <li
-          class="pl-2 transition-colors border-teal-500 heading text-zinc-500 dark:text-zinc-600 hover:text-zinc-900 dark:hover:text-zinc-100"
+          class="heading border-teal-500 pl-2 text-zinc-500 transition-colors hover:text-zinc-900 dark:text-zinc-600 dark:hover:text-zinc-100"
           class:active={activeHeading === heading}
           style={`--depth: ${
             // consider h1 and h2 at the same depth, as h1 will only be used for page title
@@ -72,7 +72,7 @@
   }
 
   .active {
-    @apply font-medium text-slate-900 border-l-2 -ml-[2px];
+    @apply -ml-[2px] border-l-2 font-medium text-slate-900;
   }
 
   /* can't use dark: modifier in @apply */

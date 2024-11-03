@@ -11,17 +11,17 @@
   } = $props()
 </script>
 
-<svelte:element this={as} class={['relative flex flex-col items-start group', _class].join(' ')}>
+<svelte:element this={as} class={['group relative flex flex-col items-start', _class].join(' ')}>
   {@render eyebrow?.()}
 
   {#if title}
     <div class="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
       {#if href}
         <div
-          class="absolute z-0 transition scale-95 opacity-0 -inset-y-6 -inset-x-4 bg-zinc-50 group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl"
+          class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl"
         ></div>
         <a {href} data-sveltekit-prefetch>
-          <span class="absolute z-20 -inset-y-6 -inset-x-4 sm:-inset-x-6 sm:rounded-2xl"></span>
+          <span class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"></span>
           <span class="relative z-10">
             {@render title?.()}
           </span>
@@ -39,7 +39,7 @@
   {/if}
 
   {#if actions}
-    <div aria-hidden="true" class="relative z-10 flex items-center mt-4">
+    <div aria-hidden="true" class="relative z-10 mt-4 flex items-center">
       {@render actions?.()}
     </div>
   {/if}

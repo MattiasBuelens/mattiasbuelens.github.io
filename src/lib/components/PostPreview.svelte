@@ -23,7 +23,7 @@
     <div>
       <div class="flex items-center text-teal-500">
         <span class="text-sm font-medium">Read</span>
-        <ArrowRightIcon class="size-4 ml-1" />
+        <ArrowRightIcon class="ml-1 size-4" />
       </div>
     </div>
   {/snippet}

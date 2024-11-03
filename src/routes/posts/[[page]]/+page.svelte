@@ -15,7 +15,7 @@
   <title>{name} | Posts</title>
 </svelte:head>
 
-<div class="flex flex-col flex-grow">
+<div class="flex flex-grow flex-col">
   <header class="pt-4">
     <h1 class="text-4xl font-bold tracking-tight sm:text-5xl">
       Writing on tech, music, and whatever else I feel like
@@ -28,7 +28,7 @@
   </div>
 
   <!-- pagination -->
-  <div class="flex items-center justify-between pt-16 pb-8">
+  <div class="flex items-center justify-between pb-8 pt-16">
     {#if !isFirstPage}
       <a href={`/posts/${data.page - 1}`} data-sveltekit-prefetch>
         <ArrowLeftIcon class="size-4" />
