@@ -1,12 +1,13 @@
-<script>
+<script lang="ts">
   import '../app.css'
   import '../prism.css'
+  import type { Snippet } from 'svelte'
   import { MoonIcon, SunIcon } from 'heroicons-svelte/24/solid'
   import { browser } from '$app/environment'
   import { name } from '$lib/info'
   import { page } from '$app/stores'
-  /** @type {{children?: import('svelte').Snippet}} */
-  let { children } = $props()
+
+  let { children }: { children: Snippet } = $props()
 
   let isDarkMode = $state(
     browser ? Boolean(document.documentElement.classList.contains('dark')) : true
@@ -42,11 +43,7 @@
 
           disableTransitionsTemporarily()
 
-          if (isDarkMode) {
-            document.querySelector('html').classList.add('dark')
-          } else {
-            document.querySelector('html').classList.remove('dark')
-          }
+          document.querySelector('html')?.classList.toggle('dark', isDarkMode)
         }}
       >
         <MoonIcon class="hidden text-zinc-500 dark:block" />

@@ -46,11 +46,11 @@ Each individual post is rendered at `src/routes/post/[slug]`. You'll notice the 
 
 ```
 -| +page.js
--| +page.server.js
+-| +page.server.ts
 -| +page.svelte
 ```
 
-The metadata for the post is loaded in `+page.server.js`. It is then used in `+page.js` to import the post's markdown file. After that, both the post and its metadata are passed into `+page.svelte` to be rendered.
+The metadata for the post is loaded in `+page.server.ts`. It is then used in `+page.js` to import the post's markdown file. After that, both the post and its metadata are passed into `+page.svelte` to be rendered.
 
 There are some basic meta tags setup for SEO and social media sharing, including a generated open graph image (courtesy of [og-image.vercel.app](https://og-image.vercel.app)).
 
