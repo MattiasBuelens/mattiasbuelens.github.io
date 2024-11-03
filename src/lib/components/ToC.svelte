@@ -2,11 +2,12 @@
   import { browser } from '$app/environment'
   import { onMount } from 'svelte'
   import Card from './Card.svelte'
+  import type { Post } from '$lib/data/posts'
 
-  let { post }: { post: unknown } = $props()
+  let { post }: { post: Post } = $props()
 
   let elements: HTMLElement[] = []
-  let headings: Array<{ id: string }> = $state(post.headings)
+  let headings = $state(post.headings)
 
   onMount(() => {
     updateHeadings()

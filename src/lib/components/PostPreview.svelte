@@ -2,8 +2,9 @@
   import Card from './Card.svelte'
   import ArrowRightIcon from './ArrowRightIcon.svelte'
   import type { Snippet } from 'svelte'
+  import type { Post } from '$lib/data/posts'
 
-  let { post, eyebrow: _eyebrow }: { post: unknown; eyebrow: Snippet } = $props()
+  let { post, eyebrow: _eyebrow }: { post: Post; eyebrow: Snippet } = $props()
 </script>
 
 <Card href={`/post/${post.slug}`} data-sveltekit-prefetch>

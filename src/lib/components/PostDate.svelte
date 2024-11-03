@@ -1,5 +1,6 @@
 <script lang="ts">
   import { format, parseISO } from 'date-fns'
+  import type { Post } from '$lib/data/posts'
 
   let {
     decorate,
@@ -8,7 +9,7 @@
     class: _class
   }: {
     decorate?: boolean
-    post: unknown
+    post: Post
     collapsed?: boolean
     class?: string
   } = $props()
