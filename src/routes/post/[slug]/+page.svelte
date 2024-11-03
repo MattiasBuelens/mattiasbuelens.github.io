@@ -1,4 +1,5 @@
-<script>
+<script lang="ts">
+  import type { PageData } from './$types'
   import { website, name, bio, avatar } from '$lib/info.js'
   import ToC from '$lib/components/ToC.svelte'
   import ArrowLeftIcon from '$lib/components/ArrowLeftIcon.svelte'
@@ -6,8 +7,7 @@
   import { afterNavigate } from '$app/navigation'
   import PostDate from '$lib/components/PostDate.svelte'
 
-  /** @type {{data: import('./$types').PageData}} */
-  let { data } = $props()
+  let { data }: { data: PageData } = $props()
 
   // generated open-graph image for sharing on social media.
   // see https://og-image.vercel.app/ for more options.
@@ -26,7 +26,7 @@
     }
   })
 
-  function goBack(event) {
+  function goBack(event: Event) {
     if (canGoBack) {
       event.preventDefault()
       history.back()

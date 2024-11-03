@@ -1,11 +1,11 @@
-<script>
+<script lang="ts">
+  import type { PageData } from './$types'
   import { name } from '$lib/info.js'
   import ArrowLeftIcon from '$lib/components/ArrowLeftIcon.svelte'
   import ArrowRightIcon from '$lib/components/ArrowRightIcon.svelte'
   import PostsList from '$lib/components/PostsList.svelte'
 
-  /** @type {{data: import('./$types').PageData}} */
-  let { data } = $props()
+  let { data }: { data: PageData } = $props()
 
   let isFirstPage = $derived(data.page === 1)
   let hasNextPage = $derived(data.posts[data.posts.length - 1]?.previous)

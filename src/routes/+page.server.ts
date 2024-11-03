@@ -1,6 +1,7 @@
+import type { PageServerLoad } from './$types'
 import { posts } from '$lib/data/posts'
 
-export async function load(): Promise<{ posts: unknown[] }> {
+export const load: PageServerLoad = async () => {
   return {
     posts: posts.slice(0, 5)
   }

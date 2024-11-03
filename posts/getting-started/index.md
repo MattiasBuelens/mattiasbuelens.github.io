@@ -45,12 +45,12 @@ The `preview` property is optional, in case you want to customize the preview te
 Each individual post is rendered at `src/routes/post/[slug]`. You'll notice the route has 3 files:
 
 ```
--| +page.js
+-| +page.ts
 -| +page.server.ts
 -| +page.svelte
 ```
 
-The metadata for the post is loaded in `+page.server.ts`. It is then used in `+page.js` to import the post's markdown file. After that, both the post and its metadata are passed into `+page.svelte` to be rendered.
+The metadata for the post is loaded in `+page.server.ts`. It is then used in `+page.ts` to import the post's markdown file. After that, both the post and its metadata are passed into `+page.svelte` to be rendered.
 
 There are some basic meta tags setup for SEO and social media sharing, including a generated open graph image (courtesy of [og-image.vercel.app](https://og-image.vercel.app)).
 
@@ -64,7 +64,7 @@ Your posts can be retrieved via `import { posts } from '$lib/data/posts'`. They 
 
 `$lib/data/posts` should only be imported in `*.server.js` files. It uses some APIs that only work server-side, so it will throw an error if you try to load it on client-side code. (It also is the data source for every post on your website, so you wouldn't want that being bundled with your client code anyways!)
 
-If you wish to render an entire post, you will need to import the `.md` file directly (as done in `src/routes/post/[slug]/+page.js`).
+If you wish to render an entire post, you will need to import the `.md` file directly (as done in `src/routes/post/[slug]/+page.ts`).
 
 ## Theme
 

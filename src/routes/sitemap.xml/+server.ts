@@ -2,18 +2,16 @@
 // It's helpful for SEO but does require you to keep it updated to reflect the routes of your website.
 // It is OK to delete this file if you'd rather not bother with it.
 
+import type { RequestHandler } from './$types'
 import { posts } from '$lib/data/posts'
 import { website } from '$lib/info'
 
 export const prerender = true
 
 // make sure this matches your post route
-const getPostUrl = (slug) => `${website}/post/${slug}`
+const getPostUrl = (slug: string) => `${website}/post/${slug}`
 
-/**
- * @type {import('@sveltejs/kit').RequestHandler}
- */
-export async function GET({ setHeaders }) {
+export const GET: RequestHandler = async ({ setHeaders }) => {
   setHeaders({
     'Cache-Control': `max-age=0, s-max-age=600`,
     'Content-Type': 'application/xml'
