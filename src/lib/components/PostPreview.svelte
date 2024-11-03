@@ -7,7 +7,7 @@
   let { post, eyebrow: _eyebrow }: { post: Post; eyebrow: Snippet } = $props()
 </script>
 
-<Card href={`/post/${post.slug}`} data-sveltekit-prefetch>
+<Card href={`/post/${post.slug}`}>
   {#snippet eyebrow()}
     {@render _eyebrow?.()}
   {/snippet}

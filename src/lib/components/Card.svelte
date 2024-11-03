@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { Snippet } from 'svelte'
+  import type { SvelteHTMLElements } from 'svelte/elements'
   let {
     as = 'div',
     href = undefined,
@@ -7,8 +8,9 @@
     eyebrow,
     title,
     description,
-    actions
-  }: {
+    actions,
+    ...rest
+  }: Omit<SvelteHTMLElements['div'], 'title'> & {
     as?: string
     href?: string
     class?: string
@@ -19,7 +21,11 @@
   } = $props()
 </script>
 
-<svelte:element this={as} class={['group relative flex flex-col items-start', _class].join(' ')}>
+<svelte:element
+  this={as}
+  class={['group relative flex flex-col items-start', _class].join(' ')}
+  {...rest}
+>
   {@render eyebrow?.()}
 
   {#if title}
@@ -28,7 +34,7 @@
         <div
           class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl"
         ></div>
-        <a {href} data-sveltekit-prefetch>
+        <a {href} data-sveltekit-preload-data="hover">
           <span class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"></span>
           <span class="relative z-10">
             {@render title?.()}
