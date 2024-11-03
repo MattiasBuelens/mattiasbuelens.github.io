@@ -1,9 +1,8 @@
-<script>
+<script lang="ts">
   import PostPreview from '$lib/components/PostPreview.svelte'
   import PostDate from '$lib/components/PostDate.svelte'
 
-  /** @type {{posts: any}} */
-  let { posts } = $props()
+  let { posts }: { posts: unknown[] } = $props()
 </script>
 
 <div class="flex flex-col gap-16 md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { linkedin, instagram, twitter, github } from '$lib/info'
 </script>
 

@@ -1,5 +1,5 @@
-<script>
-  /** @type {{as?: string, href?: any, class?: any, eyebrow?: import('svelte').Snippet, title?: import('svelte').Snippet, description?: import('svelte').Snippet, actions?: import('svelte').Snippet}} */
+<script lang="ts">
+  import type { Snippet } from 'svelte'
   let {
     as = 'div',
     href = undefined,
@@ -8,6 +8,14 @@
     title,
     description,
     actions
+  }: {
+    as?: string
+    href?: string
+    class?: string
+    eyebrow?: Snippet
+    title?: Snippet
+    description?: Snippet
+    actions?: Snippet
   } = $props()
 </script>
 

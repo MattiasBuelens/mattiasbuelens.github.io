@@ -1,13 +1,12 @@
-<script>
+<script lang="ts">
   import { browser } from '$app/environment'
   import { onMount } from 'svelte'
   import Card from './Card.svelte'
 
-  /** @type {{post: any}} */
-  let { post } = $props()
+  let { post }: { post: unknown } = $props()
 
-  let elements = []
-  let headings = $state(post.headings)
+  let elements: HTMLElement[] = []
+  let headings: Array<{ id: string }> = $state(post.headings)
 
   onMount(() => {
     updateHeadings()
@@ -22,7 +21,7 @@
 
     if (browser) {
       elements = headings.map((heading) => {
-        return document.getElementById(heading.id)
+        return document.getElementById(heading.id)!
       })
     }
   }

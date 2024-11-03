@@ -1,9 +1,9 @@
-<script>
+<script lang="ts">
   import Card from './Card.svelte'
   import ArrowRightIcon from './ArrowRightIcon.svelte'
+  import type { Snippet } from 'svelte'
 
-  /** @type {{post: any, eyebrow?: import('svelte').Snippet,}} */
-  let { post, eyebrow: _eyebrow } = $props()
+  let { post, eyebrow: _eyebrow }: { post: unknown; eyebrow: Snippet } = $props()
 </script>
 
 <Card href={`/post/${post.slug}`} data-sveltekit-prefetch>

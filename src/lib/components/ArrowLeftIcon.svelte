@@ -1,6 +1,7 @@
-<script>
-  /** @type {{[key: string]: any}} */
-  let { ...props } = $props()
+<script lang="ts">
+  import type { SVGAttributes } from 'svelte/elements'
+
+  let { ...props }: SVGAttributes<SVGSVGElement> = $props()
 </script>
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" {...props}>
