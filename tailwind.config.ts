@@ -1,5 +1,6 @@
 import typography from '@tailwindcss/typography'
 import type { Config } from 'tailwindcss'
+import type { PluginUtils } from 'tailwindcss/types/config'
 
 export default {
   content: ['./src/**/*.{html,js,svelte,ts}'],
@@ -23,7 +24,7 @@ export default {
       '8xl': ['6rem', { lineHeight: '1' }],
       '9xl': ['8rem', { lineHeight: '1' }]
     },
-    typography: ({ theme }: { theme: (x: string) => string }) => ({
+    typography: ({ theme }: PluginUtils) => ({
       invert: {
         css: {
           '--tw-prose-body': 'var(--tw-prose-invert-body)',
