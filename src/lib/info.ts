@@ -20,6 +20,8 @@ I’m ${firstName}, a software engineer from Belgium. I like working with and he
 // but you can replace with just your username.
 export const github = 'MattiasBuelens'
 export const twitter = 'MattiasBuelens'
+export const bluesky = 'mattiasbuelens.bsky.social'
+export const mastodon = 'https://fosstodon.org/@mattiasbuelens'
 export const linkedin = 'mattiasbuelens'
 export const instagram = ''
 
