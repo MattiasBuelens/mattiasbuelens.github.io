@@ -17,10 +17,7 @@
 
 <div class="flex flex-grow flex-col">
   <header class="pt-4">
-    <h1 class="text-4xl font-bold tracking-tight sm:text-5xl">
-      Writing on tech, music, and whatever else I feel like
-    </h1>
-    <p class="mt-6">All of my written content collected in one place</p>
+    <h1 class="text-4xl font-bold tracking-tight sm:text-5xl">Blog</h1>
   </header>
 
   <div class="mt-16 sm:mt-20">
