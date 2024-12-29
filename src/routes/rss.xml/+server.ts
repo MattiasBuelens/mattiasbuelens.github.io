@@ -32,7 +32,7 @@ export const GET: RequestHandler = async ({ setHeaders }) => {
       <title>${post.title}</title>
       <description>${post.preview.text}</description>
       <link>${postsUrl}/${post.slug}</link>
-      <pubDate>${new Date(post.date).toUTCString()}</pubDate>
+      <pubDate>${post.date.toUTCString()}</pubDate>
     </item>`
       )
       .join('\n')}

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { format, parseISO } from 'date-fns'
+  import { format } from 'date-fns'
   import type { Post } from '$lib/data/posts'
 
   let {
@@ -25,9 +25,7 @@
     </span>
   {/if}
   <div class="flex" class:flex-col={!collapsed}>
-    <time datetime={post.date}>
-      {format(new Date(parseISO(post.date)), 'MMMM d, yyyy')}
-    </time>
+    <time datetime={post.date.toISOString()}>{format(post.date, 'MMMM d, yyyy')}</time>
     {#if collapsed}
       <span class="mx-1">•</span>
     {/if}

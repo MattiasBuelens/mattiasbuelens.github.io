@@ -38,13 +38,7 @@ export const GET: RequestHandler = async ({ setHeaders }) => {
         .map(
           (post) => `<url>
             <loc>${getPostUrl(post.slug)}</loc>
-            <lastmod
-              >${
-                post.updated
-                  ? new Date(post.updated).toISOString()
-                  : new Date(post.date).toISOString()
-              }</lastmod
-            >
+            <lastmod>${(post.updated ?? post.date).toISOString()}</lastmod>
             <changefreq>monthly</changefreq>
             <priority>1.0</priority>
           </url>`

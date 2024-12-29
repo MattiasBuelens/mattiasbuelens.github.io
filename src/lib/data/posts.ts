@@ -1,6 +1,5 @@
 import { browser } from '$app/environment'
 import { render } from 'svelte/server'
-import { format } from 'date-fns'
 import { parse } from 'node-html-parser'
 import readingTime from 'reading-time'
 import type { Component } from 'svelte'
@@ -29,10 +28,12 @@ interface PostMarkdown {
   metadata: PostMetadata
 }
 
-interface SinglePost extends Omit<PostMetadata, 'preview'> {
+interface SinglePost extends Omit<PostMetadata, 'date' | 'updated' | 'preview'> {
   headings: readonly MarkdownHeading[]
   slug: string
   isIndexFile: boolean
+  date: Date
+  updated?: Date
   preview: {
     html?: string
     text?: string
@@ -66,15 +67,8 @@ export const posts: Post[] = Object.entries(
       // (needed to do correct dynamic import in posts/[slug].svelte)
       isIndexFile: filepath.endsWith('/index.md'),
 
-      // format date as yyyy-MM-dd
-      date: format(
-        // offset by timezone so that the date is correct
-        addTimezoneOffset(new Date(post.metadata.date)),
-        'yyyy-MM-dd'
-      ),
-      updated: post.metadata.updated
-        ? format(addTimezoneOffset(new Date(post.metadata.updated)), 'yyyy-MM-dd')
-        : undefined,
+      date: new Date(post.metadata.date),
+      updated: post.metadata.updated ? new Date(post.metadata.updated) : undefined,
 
       preview: {
         html: preview?.toString(),
@@ -87,15 +81,10 @@ export const posts: Post[] = Object.entries(
     }
   })
   // sort by date
-  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  .sort((a, b) => b.date.getTime() - a.date.getTime())
   // add references to the next/previous post
   .map((post, index, allPosts) => ({
     ...post,
     next: allPosts[index - 1],
     previous: allPosts[index + 1]
   }))
-
-function addTimezoneOffset(date: Date): Date {
-  const offsetInMilliseconds = new Date().getTimezoneOffset() * 60 * 1000
-  return new Date(new Date(date).getTime() + offsetInMilliseconds)
-}
