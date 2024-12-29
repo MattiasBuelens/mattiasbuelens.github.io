@@ -47,7 +47,7 @@
 {/if}
 
 {#if mastodon}
-  <a href={mastodon} class="group" aria-label="Follow on Bluesky">
+  <a href={mastodon} class="group" aria-label="Follow on Mastodon">
     <svg
       viewBox="0 0 74 79"
       aria-hidden="true"
