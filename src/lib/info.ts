@@ -3,7 +3,7 @@
 // feel free to remove this file.
 
 // URL of your website
-export const website = 'https://mattiasbuelens.github.io'
+export const website = 'https://mattias.buelens.com'
 
 export const firstName = 'Mattias'
 export const lastName = 'Buelens'
