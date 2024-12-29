@@ -5,7 +5,7 @@
   import { MoonIcon, SunIcon } from 'heroicons-svelte/24/solid'
   import { browser } from '$app/environment'
   import { name } from '$lib/info'
-  import { page } from '$app/stores'
+  import { page } from '$app/state'
 
   let { children }: { children: Snippet } = $props()
 
@@ -52,7 +52,7 @@
     </header>
     <main
       class="mx-auto flex w-full flex-grow flex-col"
-      class:max-w-2xl={!$page.data.layout?.fullWidth}
+      class:max-w-2xl={!page.data.layout?.fullWidth}
     >
       {@render children?.()}
     </main>
