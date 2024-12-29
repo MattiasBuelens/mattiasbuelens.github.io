@@ -12,10 +12,7 @@ export const name = `${firstName} ${lastName}`
 // Used for the landing page & footer of posts
 export const avatar = 'https://avatars.githubusercontent.com/u/649348'
 export const bio = `\
-I’m ${firstName}, a software engineer based in Belgium. Lorem ipsum dolor sit amet, consectetur
-adipiscing elit. Phasellus accumsan quam at eros malesuada, id luctus lectus efficitur. Nulla
-sit amet arcu mi. Duis quis mauris malesuada, posuere orci et, pulvinar nisl. Nam malesuada
-vehicula sapien vitae sagittis.
+I’m ${firstName}, a software engineer from Belgium. I like working with and helping to advance web technologies.
 `
 
 // Your social usernames, empty strings won't be used.
