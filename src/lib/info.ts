@@ -25,3 +25,5 @@ export const github = 'MattiasBuelens'
 export const twitter = 'MattiasBuelens'
 export const linkedin = 'mattiasbuelens'
 export const instagram = ''
+
+export const timezone = 'Europe/Brussels'

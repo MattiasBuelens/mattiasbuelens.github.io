@@ -1,6 +1,6 @@
 ---
 title: Lorem Ipsum
-date: 2022-01-02
+date: 2022-01-02T00:00:00+01:00
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et molestie ac feugiat sed lectus. Nisi est sit amet facilisis magna etiam tempor orci. Dolor sed viverra ipsum nunc aliquet.

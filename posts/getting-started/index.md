@@ -1,6 +1,6 @@
 ---
 title: Getting Started
-date: 2022-12-14
+date: 2022-12-14T00:00:00+01:00
 ---
 
 Thanks for checking out my blog template. It's based on the blog I built for my own [website](https://mattjennings.io) and I hope this is a good starting point for you to start yours.
