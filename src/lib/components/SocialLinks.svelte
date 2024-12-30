@@ -3,7 +3,7 @@
 </script>
 
 {#if github}
-  <a href={`https://github.com/${github}`} class="group" aria-label="Follow on GitHub">
+  <a href={`https://github.com/${github}`} rel="me" class="group" aria-label="Follow on GitHub">
     <svg
       viewBox="0 0 24 24"
       aria-hidden="true"
@@ -19,7 +19,12 @@
 {/if}
 
 {#if twitter}
-  <a href={`https://twitter.com/${twitter}`} class="group" aria-label="Follow on X/Twitter">
+  <a
+    href={`https://twitter.com/${twitter}`}
+    rel="me"
+    class="group"
+    aria-label="Follow on X/Twitter"
+  >
     <svg
       viewBox="0 0 24 24"
       aria-hidden="true"
@@ -33,7 +38,12 @@
 {/if}
 
 {#if bluesky}
-  <a href={`https://bsky.app/profile/${bluesky}`} class="group" aria-label="Follow on Bluesky">
+  <a
+    href={`https://bsky.app/profile/${bluesky}`}
+    rel="me"
+    class="group"
+    aria-label="Follow on Bluesky"
+  >
     <svg
       viewBox="0 0 600 530"
       aria-hidden="true"
@@ -47,7 +57,7 @@
 {/if}
 
 {#if mastodon}
-  <a href={mastodon} class="group" aria-label="Follow on Mastodon">
+  <a href={mastodon} rel="me" class="group" aria-label="Follow on Mastodon">
     <svg
       viewBox="0 0 74 79"
       aria-hidden="true"
@@ -62,7 +72,12 @@
 {/if}
 
 {#if instagram}
-  <a href={`https://instagram.com/${instagram}`} class="group" aria-label="Follow on Instagram">
+  <a
+    href={`https://instagram.com/${instagram}`}
+    rel="me"
+    class="group"
+    aria-label="Follow on Instagram"
+  >
     <svg
       viewBox="0 0 24 24"
       aria-hidden="true"
@@ -79,7 +94,12 @@
 {/if}
 
 {#if linkedin}
-  <a href={`https://linkedin.com/in/${linkedin}`} class="group" aria-label="Follow on LinkedIn">
+  <a
+    href={`https://linkedin.com/in/${linkedin}`}
+    rel="me"
+    class="group"
+    aria-label="Follow on LinkedIn"
+  >
     <svg
       viewBox="0 0 24 24"
       class="size-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300"
