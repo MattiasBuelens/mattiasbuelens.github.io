@@ -36,7 +36,7 @@ Anyway, here's what I'm currently using:
 - I use [SvelteKit](https://svelte.dev/docs/kit/) for the app framework. I love how Svelte lets you write components with (mostly) plain HTML, CSS and JavaScript, and then compose and re-use them however you like. SvelteKit's path-based routing is also excellent, and I actually _like_ how server-only code must live in a separate `+server` file (instead of sprinkling `"use server"` directives around). Also, lots of ❤️️ for [Rollup](https://rollupjs.org/) and [Vite](https://vite.dev/)!
 - I started from [Matt Jennings](https://mattjennings.io/)' excellent [SvelteKit blog template](https://github.com/mattjennings/sveltekit-blog-template). I'm not a great designer myself, so having a solid design to start from really helped. I refactored all JavaScript code to TypeScript, and updated everything to SvelteKit 2 and Svelte 6.
 
-[The entire website lives on GitHub](https://github.com/MattiasBuelens/site). Feel free to look around, send pull requests to fix typos, or use it as the template for your own blog.
+[The entire website lives on GitHub](https://github.com/MattiasBuelens/website). Feel free to look around, send pull requests to fix typos, or use it as the template for your own blog.
 
 ## Thanks for visiting!
 
